@@ -35,7 +35,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+                    android:text="@string/dummy_text"/>
 
                 <TextView
                     android:layout_width="match_parent"
