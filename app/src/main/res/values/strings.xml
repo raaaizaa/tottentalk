@@ -2,4 +2,60 @@
     <string name="app_name">TottenTalk</string>
     <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
     <string name="dummy_title">Lorem ipsum dolor sit amet</string>
+
+    <string-array name="news_headline">
+        <item>Harry Kane now increasingly likely to leave Tottenham</item>
+        <item>Journalist reveals why Tottenham Hotspur are admirers of Burnley\'s Vincent Kompany</item>
+        <item>‘Unbelievable’ manager still in running for Tottenham job after direct talks with Daniel Levy</item>
+        <item>Tottenham keen on 25–year–old attacking midfielder who will cost €30–35 million</item>
+        <item>REPORT: TOTTENHAM TELL INTER MILAN THEY’RE READY TO SIGN 27-YEAR-OLD</item>
+    </string-array>
+
+    <string-array name="news_date">
+        <item>April 27, 2023</item>
+        <item>April 27, 2023</item>
+        <item>April 27, 2023</item>
+        <item>April 27, 2023</item>
+        <item>April 27, 2023</item>
+    </string-array>
+
+    <string-array name="news_description">
+        <item>Tottenham Hotspur striker Harry Kane is reportedly ‘increasingly likely’ to leave the club, with no signs at the moment that he’ll sign a new deal. Kane’s future at Tottenham looks set to dominate the headlines this summer as he approaches the final year of his contract. The 29-year-old is attracting interest from the likes of Manchester United and Bayern Munich, but it would seem that he is keen to remain in England. He’s made it evidently clear in the past that he wishes to challenge for the biggest honours at Spurs, but they look miles off the pace at the moment.</item>
+
+        <item>Tottenham Hotspur have taken an interest in Burnley boss Vincent Kompany because he has a "very unique outlook" on how to play, according to journalist Dean Jones who spoke to Give Me Sport. The 37-year-old managed to change the Clarets\' style of play very quickly last year and was able to do so because of a rebuild during the previous summer transfer window, with many former key players leaving and several arriving. Trusted to put his stamp on the squad, his faith has paid dividends with the Lancashire outfit sealing the Championship title on Tuesday evening and looking as though they will be a formidable force in the top flight if they can strengthen. The Belgian was previously believed to be at the top of Spurs\' shortlist - but he could be just one of several candidates in the frame to take over in the summer following the end of Ryan Mason\'s interim spell. In a potential blow for Daniel Levy though, Kompany is reportedly prepared to reject an offer from Tottenham to stay at his current side and that could force the North London outfit to look elsewhere for a new manager. There were reportedly reservations from Spurs\' end about the ex-Manchester City captain\'s lack of experience anyway - and the 37-year-old could potentially sign a new contract at Burnley to all but confirm that he\'s staying at Turf Moor.</item>
+
+        <item>Luis Enrique is still in the running to be the next Tottenham Hotspur manager next season. That’s according to a report from The Athletic, who outside what’s going on behind–the–scenes at Spurs. Tottenham fans will want to put all their worries about the club behind them this evening. Ryan Mason takes charge of his first game this season against Manchester United tonight. If Spurs want to return to the Champions League next season, they need to beat their top four rivals tonight.The response to the team from the fans will be interesting after their 6–1 defeat on Sunday to Newcastle. It highlighted just how quickly Daniel Levy needs to act to bring in a permanent replacement for Antonio Conte. One name that has been linked with the vacant manager role at Tottenham is Luis Enrique. The Spanish coach has had direct talks with Daniel Levy about taking over from Conte. Whether he’s still keen to take the job after watching Sunday’s humiliation is another matter.</item>
+
+        <item>Tottenham Hotspur are reportedly keeping tabs on the Croatian international midfielder Lovro Majer ahead of the summer transfer window. According to a report from JeunesFooteux, the 25–year–old midfielder has had a tough time at Rennes and he could look to leave the club at the end of the season. Apparently, the French outfit would sanction his departure for a fee of around €30–35 million. Tottenham are keeping close tabs on the midfielder and it remains to be seen whether they follow up on their interest with a concrete bid at the end of the season. It is no secret that Spurs are in need of midfielder reinforcements this summer. They are lacking in craft and technicality in the middle of the park.</item>
+
+        <item>Tottenham Hotspur are keen on Andre Onana and have now told Inter Milan that they will take the goalkeeper this summer. That’s according to a report from 90Min, who claim that Onana is effectively on the transfer list at Inter. Onana only joined Inter last summer, arriving on a free transfer from Ajax. Inter need to raise funds though and Onana is seen as one player who can bring in some cash. It’s suggested that both Chelsea and Tottenham have told Inter that they are happy to take Onana this summer. It’s unclear just how much that would cost, but the two London clubs appear keen to strike a cut-price deal and take advantage of Inter’s financial situation. Spurs are understood to have admired Onana for a long time and may feel this is the perfect chance to sign him.</item>
+    </string-array>
+
+    <string-array name="news_picture">
+        <item>@drawable/news1</item>
+        <item>@drawable/news2</item>
+        <item>@drawable/news3</item>
+        <item>@drawable/news4</item>
+        <item>@drawable/news5</item>
+    </string-array>
+    
+    <string-array name="upcoming_plays">
+        <item>Man United VS Tottenham</item>
+        <item>Liverpool VS Tottenham</item>
+        <item>Tottenham VS Crystal Palace</item>
+    </string-array>
+
+    <string-array name="upcoming_date">
+        <item>April 28, 2023</item>
+        <item>April 30, 2023</item>
+        <item>May 6, 2023</item>
+    </string-array>
+
+    <string-array name="club_logo">
+        <item>@drawable/tottenham_logo</item>
+        <item>@drawable/manunited_logo</item>
+        <item>@drawable/liverpool_logo</item>
+        <item>@drawable/crystalpalace_logo</item>
+    </string-array>
+
 </resources>
