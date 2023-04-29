@@ -36,8 +36,6 @@ public class login extends AppCompatActivity {
             String username = usernameField.getText().toString();
             String password = passwordField.getText().toString();
 
-            // biar gampang debug langsung aja ke homepage
-            goToHomepage();
             if(username.isEmpty() || password.isEmpty()){
                 Toast.makeText(this, "All fields must be filled!", Toast.LENGTH_SHORT).show();
             }else if(username.equals("dummy") && password.equals("dummy123")){

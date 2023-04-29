@@ -1,4 +1,4 @@
-package com.example.tottentalk.activity;
+package com.example.tottentalk.javaclass;
 
 import android.os.Parcel;
 import android.os.Parcelable;

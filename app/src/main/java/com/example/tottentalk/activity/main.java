@@ -13,6 +13,8 @@ import android.widget.ImageButton;
 import com.example.tottentalk.R;
 import com.example.tottentalk.adapter.newsAdapter;
 import com.example.tottentalk.adapter.upcomingAdapter;
+import com.example.tottentalk.javaclass.news;
+import com.example.tottentalk.javaclass.upcoming;
 
 import java.util.ArrayList;
 

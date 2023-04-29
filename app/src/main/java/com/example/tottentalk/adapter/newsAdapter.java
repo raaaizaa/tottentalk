@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tottentalk.R;
 import com.example.tottentalk.clicked_activity.clickedNews;
-import com.example.tottentalk.activity.news;
+import com.example.tottentalk.javaclass.news;
 
 import java.util.ArrayList;
 

@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tottentalk.R;
 import com.example.tottentalk.clicked_activity.clickedUpcoming;
-import com.example.tottentalk.activity.upcoming;
+import com.example.tottentalk.javaclass.upcoming;
 
 import java.util.ArrayList;
 
