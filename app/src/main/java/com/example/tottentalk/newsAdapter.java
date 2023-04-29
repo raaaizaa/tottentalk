@@ -46,61 +46,42 @@ public class newsAdapter extends RecyclerView.Adapter<newsAdapter.ViewHolder> {
         holder.headline.setText(news.getHeadline());
         holder.date.setText(news.getDate());
 
+        holder.itemView.setOnClickListener(e -> onItemClickCallback.onItemClicked(newsList.get(holder.getAdapterPosition())));
+
+        holder.itemView.setOnClickListener(e -> {
+            String isHeadline = newsList.get(position).getHeadline();
+            if(isHeadline.contains("Harry Kane now")){
+                int i = 0;
+                setDefault(i);
+            }else if(isHeadline.contains("Journalist reveals why")){
+                int i = 1;
+                setDefault(i);
+            }else if(isHeadline.contains("‘Unbelievable’ manager still in running for Tottenham")){
+                int i = 2;
+                setDefault(i);
+            }else if(isHeadline.contains("Tottenham keen on 25–year–old")){
+                int i = 3;
+                setDefault(i);
+            }else if(isHeadline.contains("REPORT: TOTTENHAM TELL INTER MILAN")){
+                int i = 4;
+                setDefault(i);
+            }
+        });
+    }
+
+    public void setDefault(int i){
         TypedArray image = context.getResources().obtainTypedArray(R.array.news_picture);
         String[] headline = context.getResources().getStringArray(R.array.news_headline);
         String[] date = context.getResources().getStringArray(R.array.news_date);
         String[] description = context.getResources().getStringArray(R.array.news_description);
 
-        holder.itemView.setOnClickListener(e -> onItemClickCallback.onItemClicked(newsList.get(holder.getAdapterPosition())));
+        Intent intent = new Intent(context, clickedNews.class);
+        intent.putExtra("DefaultImage", image.getResourceId(i, -1));
+        intent.putExtra("DefaultHeadline", headline[i]);
+        intent.putExtra("DefaultDate", date[i]);
+        intent.putExtra("DefaultDescription", description[i]);
 
-        holder.itemView.setOnClickListener(e -> {
-            if(newsList.get(position).getHeadline().contains("Harry Kane now")){
-                int i = 0;
-                Intent intent = new Intent(context, clickedNews.class);
-                intent.putExtra("DefaultImage", image.getResourceId(i, -1));
-                intent.putExtra("DefaultHeadline", headline[i]);
-                intent.putExtra("DefaultDate", date[i]);
-                intent.putExtra("DefaultDescription", description[i]);
-
-                context.startActivity(intent);
-            }else if(newsList.get(position).getHeadline().contains("Journalist reveals why")){
-                int i = 1;
-                Intent intent = new Intent(context, clickedNews.class);
-                intent.putExtra("DefaultImage", image.getResourceId(i, -1));
-                intent.putExtra("DefaultHeadline", headline[i]);
-                intent.putExtra("DefaultDate", date[i]);
-                intent.putExtra("DefaultDescription", description[i]);
-
-                context.startActivity(intent);
-            }else if(newsList.get(position).getHeadline().contains("‘Unbelievable’ manager still in running for Tottenham")){
-                int i = 2;
-                Intent intent = new Intent(context, clickedNews.class);
-                intent.putExtra("DefaultImage", image.getResourceId(i, -1));
-                intent.putExtra("DefaultHeadline", headline[i]);
-                intent.putExtra("DefaultDate", date[i]);
-                intent.putExtra("DefaultDescription", description[i]);
-
-                context.startActivity(intent);
-            }else if(newsList.get(position).getHeadline().contains("Tottenham keen on 25–year–old")){
-                int i = 3;
-                Intent intent = new Intent(context, clickedNews.class);
-                intent.putExtra("DefaultImage", image.getResourceId(i, -1));
-                intent.putExtra("DefaultHeadline", headline[i]);
-                intent.putExtra("DefaultDate", date[i]);
-                intent.putExtra("DefaultDescription", description[i]);
-
-                context.startActivity(intent);
-            }else if(newsList.get(position).getHeadline().contains("REPORT: TOTTENHAM TELL INTER MILAN")){
-                int i = 4;
-                Intent intent = new Intent(context, clickedNews.class);
-                intent.putExtra("DefaultImage", image.getResourceId(i, -1));
-                intent.putExtra("DefaultHeadline", headline[i]);
-                intent.putExtra("DefaultDate", date[i]);
-                intent.putExtra("DefaultDescription", description[i]);
-
-                context.startActivity(intent);
-            }
-        });
+        context.startActivity(intent);
     }
 
     @Override

@@ -38,7 +38,7 @@
         <item>@drawable/news4</item>
         <item>@drawable/news5</item>
     </string-array>
-    
+
     <string-array name="upcoming_plays">
         <item>Man United VS Tottenham</item>
         <item>Liverpool VS Tottenham</item>

@@ -48,44 +48,39 @@ public class upcomingAdapter extends RecyclerView.Adapter<upcomingAdapter.ViewHo
         holder.gamename.setText(upcoming.getGamename());
         holder.gamedate.setText(upcoming.getGamedate());
 
+        holder.itemView.setOnClickListener(e -> onItemClickCallback.onItemClicked(upcomingList.get(holder.getAdapterPosition())));
+
+        holder.itemView.setOnClickListener(e -> {
+            int tottenham = 0, manutd = 1, liv = 2, crystal = 3;
+
+            String dateIs = upcomingList.get(position).getGamedate();
+
+            if(dateIs.equals("April 28, 2023")){
+                int i = 0;
+                setDefault(i, manutd, tottenham);
+            }else if(dateIs.equals("April 30, 2023")){
+                int i = 1;
+                setDefault(i, liv, tottenham);
+            }else if(dateIs.equals("May 6, 2023")){
+                int i = 2;
+                setDefault(i, tottenham, crystal);
+            }
+        });
+    }
+
+    public void setDefault(int i, int teamone, int teamtwo){
         TypedArray teamoneImage = context.getResources().obtainTypedArray(R.array.club_logo);
         TypedArray teamtwoImage = context.getResources().obtainTypedArray(R.array.club_logo);
         String[] gamename = context.getResources().getStringArray(R.array.upcoming_plays);
         String[] gamedate = context.getResources().getStringArray(R.array.upcoming_date);
 
-        holder.itemView.setOnClickListener(e -> onItemClickCallback.onItemClicked(upcomingList.get(holder.getAdapterPosition())));
+        Intent intent = new Intent(context, clickedUpcoming.class);
+        intent.putExtra("DefaultImageOne", teamoneImage.getResourceId(teamone, -1));
+        intent.putExtra("DefaultImageTwo", teamtwoImage.getResourceId(teamtwo, -1));
+        intent.putExtra("DefaultName", gamename[i]);
+        intent.putExtra("DefaultDate", gamedate[i]);
 
-        holder.itemView.setOnClickListener(e -> {
-            int tottenham = 0, manutd = 1, liv = 2, crystal = 3;
-            if(upcomingList.get(position).getGamedate().equals("April 28, 2023")){
-                int i = 0;
-                Intent intent = new Intent(context, clickedUpcoming.class);
-                intent.putExtra("DefaultImageOne", teamoneImage.getResourceId(manutd, -1));
-                intent.putExtra("DefaultImageTwo", teamtwoImage.getResourceId(tottenham, -1));
-                intent.putExtra("DefaultName", gamename[i]);
-                intent.putExtra("DefaultDate", gamedate[i]);
-
-                context.startActivity(intent);
-            }else if(upcomingList.get(position).getGamedate().equals("April 30, 2023")){
-                int i = 1;
-                Intent intent = new Intent(context, clickedUpcoming.class);
-                intent.putExtra("DefaultImageOne", teamoneImage.getResourceId(liv, -1));
-                intent.putExtra("DefaultImageTwo", teamtwoImage.getResourceId(tottenham, -1));
-                intent.putExtra("DefaultName", gamename[i]);
-                intent.putExtra("DefaultDate", gamedate[i]);
-
-                context.startActivity(intent);
-            }else if(upcomingList.get(position).getGamedate().equals("May 6, 2023")){
-                int i = 2;
-                Intent intent = new Intent(context, clickedUpcoming.class);
-                intent.putExtra("DefaultImageOne", teamoneImage.getResourceId(tottenham, -1));
-                intent.putExtra("DefaultImageTwo", teamtwoImage.getResourceId(crystal, -1));
-                intent.putExtra("DefaultName", gamename[i]);
-                intent.putExtra("DefaultDate", gamedate[i]);
-
-                context.startActivity(intent);
-            }
-        });
+        context.startActivity(intent);
     }
 
     @Override

@@ -2,14 +2,21 @@ package com.example.tottentalk;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class clickedUpcoming extends AppCompatActivity {
 
+    private Button buyButton;
     private ImageButton backButton, cartButton;
     private ImageView teamone, teamtwo;
     private TextView name, date;
@@ -27,6 +34,9 @@ public class clickedUpcoming extends AppCompatActivity {
 
         cartButton = findViewById(R.id.cartButton);
         setCartButton();
+
+        buyButton = findViewById(R.id.buyButton);
+        setBuyButton();
 
         teamone = findViewById(R.id.teamone);
         teamtwo = findViewById(R.id.teamtwo);
@@ -46,6 +56,36 @@ public class clickedUpcoming extends AppCompatActivity {
             goToCartPage();
         });
     }
+
+    public void setBuyButton() {
+        buyButton.setOnClickListener(v -> {
+            String msg = "Are you sure you want to buy this ticket?";
+            new AlertDialog.Builder(this)
+                    .setMessage(msg)
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        String game = "";
+                        String selectedDate = date.getText().toString();
+
+                        if(selectedDate.equals("April 28, 2023")){
+                            game = "Man United VS Tottenham";
+                        }else if(selectedDate.equals("April 30, 2023")) {
+                            game = "Liverpool VS Tottenham";
+                        }else if(selectedDate.equals("May 6, 2023")) {
+                            game = "Tottenham VS Crystal Palace";
+                        }
+                        addTicket(game, selectedDate);
+                        Toast.makeText(clickedUpcoming.this, "Success adding " + game + "!", Toast.LENGTH_SHORT).show();
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        });
+    }
+
+    public void addTicket(String name, String date){
+        new ticket(name, date);
+        Log.i("tes", ticket.getTicketList().toString());
+    }
+
 
     public void setDetails(){
         Intent intent = getIntent();
@@ -67,6 +107,7 @@ public class clickedUpcoming extends AppCompatActivity {
     }
 
     public void goToCartPage(){
-        // ehe
+        Intent intent = new Intent(this, cart.class);
+        startActivity(intent);
     }
 }

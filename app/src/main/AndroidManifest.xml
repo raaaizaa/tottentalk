@@ -12,6 +12,9 @@
         android:theme="@style/Theme.TottenTalk"
         tools:targetApi="31">
         <activity
+            android:name=".cart"
+            android:exported="false" />
+        <activity
             android:name=".main"
             android:exported="false" />
         <activity

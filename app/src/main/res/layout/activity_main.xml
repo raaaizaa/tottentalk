@@ -8,7 +8,6 @@
     tools:context=".main">
 
     <include layout="@layout/toolbar"/>
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -26,13 +25,15 @@
                 android:textColor="@color/tottenham_blue"
                 android:paddingHorizontal="24dp"
                 android:paddingVertical="12dp"
-                android:text="News"/>
+                android:text="Upcoming Plays"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/news_recyclerview"
-                android:layout_width="match_parent"
+                android:id="@+id/upcoming_recyclerview"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="24dp" />
+                android:scrollbars="horizontal"
+                android:paddingHorizontal="24dp"
+                android:paddingBottom="6dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -41,18 +42,21 @@
                 android:textStyle="bold"
                 android:textColor="@color/tottenham_blue"
                 android:paddingHorizontal="24dp"
-                android:paddingVertical="12dp"
-                android:text="Upcoming Plays"/>
+                android:paddingVertical="6dp"
+                android:text="News"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/upcoming_recyclerview"
+                android:id="@+id/news_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="24dp" />
+                android:paddingHorizontal="24dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="96dp" />
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
 
 
 </LinearLayout>

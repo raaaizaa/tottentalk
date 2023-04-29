@@ -18,6 +18,7 @@ public class main extends AppCompatActivity {
     private ArrayList<upcoming> upcomingList = new ArrayList<>();
     private RecyclerView newsRV, upcomingRV;
     private ImageButton backButton, cartButton;
+    LinearLayoutManager LinearLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,8 @@ public class main extends AppCompatActivity {
     }
 
     public void goToCartPage(){
-        // ehe
+        Intent intent = new Intent(this, cart.class);
+        startActivity(intent);
     }
 
     public ArrayList<news> getNewsList(){
@@ -121,8 +123,9 @@ public class main extends AppCompatActivity {
 
         newsAdapter.setOnItemClickCallback(data -> showNewsSelected(data));
 
-        upcomingRV.setLayoutManager(new LinearLayoutManager((this)));
+        LinearLayoutManager = new LinearLayoutManager(main.this, LinearLayoutManager.HORIZONTAL, false);
         upcomingAdapter upcomingAdapter = new upcomingAdapter(upcomingList, this);
+        upcomingRV.setLayoutManager(LinearLayoutManager);
         upcomingRV.setAdapter(upcomingAdapter);
 
         upcomingAdapter.setOnItemClickCallback(data -> showUpcomingSelected(data));
