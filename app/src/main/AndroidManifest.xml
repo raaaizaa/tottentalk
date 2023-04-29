@@ -12,19 +12,19 @@
         android:theme="@style/Theme.TottenTalk"
         tools:targetApi="31">
         <activity
-            android:name=".cart"
+            android:name=".activity.history"
             android:exported="false" />
         <activity
-            android:name=".main"
+            android:name=".activity.main"
             android:exported="false" />
         <activity
-            android:name=".clickedNews"
+            android:name=".clicked_activity.clickedNews"
             android:exported="false" />
         <activity
-            android:name=".clickedUpcoming"
+            android:name=".clicked_activity.clickedUpcoming"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name=".activity.login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

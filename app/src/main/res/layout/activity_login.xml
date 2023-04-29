@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:orientation="vertical"
-    tools:context=".login">
+    tools:context=".activity.login">
 
     <ImageView
+        android:contentDescription="@string/tottenham"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:src="@drawable/tottenham_logo" />
@@ -29,7 +29,7 @@
         android:textSize="16sp"
         android:layout_marginBottom="12dp"
         android:textColor="@color/black"
-        android:text="A Tottenham Hotspur Portal App" />
+        android:text="@string/app_description" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
             android:drawablePadding="12dp"
             android:inputType="text"
             android:autofillHints="username"
-            android:hint="Username" />
+            android:hint="@string/username" />
 
         <EditText
             android:id="@+id/passwordField"
@@ -65,7 +65,7 @@
             android:drawablePadding="12dp"
             android:inputType="textPassword"
             android:autofillHints="password"
-            android:hint="Password" />
+            android:hint="@string/password" />
 
         <Button
             android:id="@+id/loginButton"
@@ -76,8 +76,7 @@
             android:layout_marginVertical="10dp"
             android:background="@drawable/button_styling"
             android:textColor="@color/white"
-            android:text="Login" />
-
+            android:text="@string/login" />
     </LinearLayout>
 
 

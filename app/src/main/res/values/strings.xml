@@ -1,7 +1,26 @@
 <resources>
     <string name="app_name">TottenTalk</string>
+    <string name="tottenham">Tottenham Hotspur</string>
+    <string name="app_description">A Tottenham Hotspur Portal App</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+
+    <string name="main_header_one">Upcoming Plays</string>
+    <string name="main_header_two">News</string>
+
+    <string name="image_description">Image</string>
+    <string name="versus">VS</string>
+    <string name="date_format">January 01, 1970</string>
+    <string name="buy_ticket">Buy Ticket</string>
+
     <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
     <string name="dummy_title">Lorem ipsum dolor sit amet</string>
+
+    <string name="history_title">Here\'s your purchase history</string>
+
+    <string name="back_button">Back Button</string>
+    <string name="history_button">History Button</string>
 
     <string-array name="news_headline">
         <item>Harry Kane now increasingly likely to leave Tottenham</item>

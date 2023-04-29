@@ -24,7 +24,8 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/teamone"
+                    android:id="@+id/teamOne"
+                    android:contentDescription="@string/image_description"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:src="@drawable/wireframe"/>
@@ -37,10 +38,11 @@
                     android:padding="24dp"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:text="VS" />
+                    android:text="@string/versus" />
 
                 <ImageView
-                    android:id="@+id/teamtwo"
+                    android:id="@+id/teamTwo"
+                    android:contentDescription="@string/image_description"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:src="@drawable/wireframe"/>
@@ -54,7 +56,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/gamename"
+                    android:id="@+id/gameName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
@@ -65,10 +67,10 @@
                     android:shadowColor="@color/black"
                     android:textSize="24sp"
                     android:paddingHorizontal="24dp"
-                    android:text="BLABLABLA VS BLABLABLA" />
+                    android:text="@string/dummy_title" />
 
                 <TextView
-                    android:id="@+id/gamedate"
+                    android:id="@+id/gameDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"                    android:textColor="@color/white"
                     android:textStyle="bold"
@@ -78,7 +80,7 @@
                     android:shadowColor="@color/black"
                     android:textSize="12sp"
                     android:paddingHorizontal="24dp"
-                    android:text="DD-MM-YYYY" />
+                    android:text="@string/date_format" />
 
 
             </LinearLayout>

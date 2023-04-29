@@ -1,4 +1,4 @@
-package com.example.tottentalk;
+package com.example.tottentalk.activity;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 
 public class news implements Parcelable {
 
-    private String headline, date, description;
+    private String headline, date;
     private Integer picture;
 
     public String getHeadline() {
@@ -26,14 +26,6 @@ public class news implements Parcelable {
         this.date = date;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public Integer getPicture() {
         return picture;
     }
@@ -43,6 +35,7 @@ public class news implements Parcelable {
     }
 
     public static final Creator<news> CREATOR = new Creator<news>() {
+
         @Override
         public news createFromParcel(Parcel in) {
             return new news();
@@ -63,7 +56,6 @@ public class news implements Parcelable {
     public void writeToParcel(@NonNull Parcel dest, int flags) {
         dest.writeString(headline);
         dest.writeString(date);
-        dest.writeString(description);
 
         if(picture == null){
             dest.writeByte((byte) 0);

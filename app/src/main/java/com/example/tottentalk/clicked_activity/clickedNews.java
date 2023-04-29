@@ -1,4 +1,4 @@
-package com.example.tottentalk;
+package com.example.tottentalk.clicked_activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,10 +8,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tottentalk.R;
+import com.example.tottentalk.activity.history;
+import com.example.tottentalk.activity.main;
+
 public class clickedNews extends AppCompatActivity {
 
-    private ImageButton backButton, cartButton;
-    private ImageView picture;
+    private ImageButton backButton, historyButton;
+    private ImageView image;
     private TextView headline, date, description;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,37 +29,33 @@ public class clickedNews extends AppCompatActivity {
         backButton = findViewById(R.id.backButton);
         setBackButton();
 
-        cartButton = findViewById(R.id.cartButton);
-        setCartButton();
+        historyButton = findViewById(R.id.historyButton);
+        setHistoryButton();
 
-        picture = findViewById(R.id.news_image);
+        image = findViewById(R.id.news_image);
         headline = findViewById(R.id.news_headline);
         date = findViewById(R.id.news_date);
         description = findViewById(R.id.news_description);
-        setDetails();
+        setDefaultContent();
     }
 
     public void setBackButton(){
-        backButton.setOnClickListener(e -> {
-            goToHomePage();
-        });
+        backButton.setOnClickListener(e -> goToHomePage());
     }
 
-    public void setCartButton(){
-        cartButton.setOnClickListener(e -> {
-            goToCartPage();
-        });
+    public void setHistoryButton(){
+        historyButton.setOnClickListener(e -> goToHistoryPage());
     }
 
-    public void setDetails(){
+    public void setDefaultContent(){
         Intent intent = getIntent();
 
-        Integer defaultImage = intent.getIntExtra("DefaultImage", 0);
+        int defaultImage = intent.getIntExtra("DefaultImage", 0);
         String defaultHeadline = intent.getStringExtra("DefaultHeadline");
         String defaultDate = intent.getStringExtra("DefaultDate");
         String defaultDescription = intent.getStringExtra("DefaultDescription");
 
-        picture.setImageResource(defaultImage);
+        image.setImageResource(defaultImage);
         headline.setText(defaultHeadline);
         date.setText(defaultDate);
         description.setText(defaultDescription);
@@ -66,7 +66,8 @@ public class clickedNews extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToCartPage(){
-        // ehe
+    public void goToHistoryPage(){
+        Intent intent = new Intent(this, history.class);
+        startActivity(intent);
     }
 }

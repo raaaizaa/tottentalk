@@ -1,5 +1,6 @@
-package com.example.tottentalk;
+package com.example.tottentalk.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -12,16 +13,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tottentalk.R;
+import com.example.tottentalk.clicked_activity.clickedNews;
+import com.example.tottentalk.activity.news;
+
 import java.util.ArrayList;
 
 public class newsAdapter extends RecyclerView.Adapter<newsAdapter.ViewHolder> {
-    private ArrayList<news> newsList;
-    private OnItemClickCallback onItemClickCallback;
-    private Context context;
 
-    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback){
-        this.onItemClickCallback = onItemClickCallback;
-    }
+    private final ArrayList<news> newsList;
+    private final Context context;
+    OnItemClickCallback onItemClickCallback;
 
     public interface OnItemClickCallback{
         void onItemClicked(news data);
@@ -50,27 +52,35 @@ public class newsAdapter extends RecyclerView.Adapter<newsAdapter.ViewHolder> {
 
         holder.itemView.setOnClickListener(e -> {
             String isHeadline = newsList.get(position).getHeadline();
+
             if(isHeadline.contains("Harry Kane now")){
                 int i = 0;
-                setDefault(i);
+                setDefaultContent(i);
+
             }else if(isHeadline.contains("Journalist reveals why")){
                 int i = 1;
-                setDefault(i);
+                setDefaultContent(i);
+
             }else if(isHeadline.contains("‘Unbelievable’ manager still in running for Tottenham")){
                 int i = 2;
-                setDefault(i);
+                setDefaultContent(i);
+
             }else if(isHeadline.contains("Tottenham keen on 25–year–old")){
                 int i = 3;
-                setDefault(i);
+                setDefaultContent(i);
+
             }else if(isHeadline.contains("REPORT: TOTTENHAM TELL INTER MILAN")){
                 int i = 4;
-                setDefault(i);
+                setDefaultContent(i);
+
             }
         });
     }
 
-    public void setDefault(int i){
+    public void setDefaultContent(int i){
+        @SuppressLint("Recycle")
         TypedArray image = context.getResources().obtainTypedArray(R.array.news_picture);
+
         String[] headline = context.getResources().getStringArray(R.array.news_headline);
         String[] date = context.getResources().getStringArray(R.array.news_date);
         String[] description = context.getResources().getStringArray(R.array.news_description);
@@ -90,7 +100,7 @@ public class newsAdapter extends RecyclerView.Adapter<newsAdapter.ViewHolder> {
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView picture;
         TextView headline, date;
 

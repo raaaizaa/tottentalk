@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".cart">
+    tools:context=".activity.history">
 
     <include layout="@layout/toolbar" />
 
@@ -16,7 +16,7 @@
         android:textColor="@color/tottenham_blue"
         android:textStyle="bold"
         android:padding="24dp"
-        android:text="Here's your purchase history"/>
+        android:text="@string/history_title"/>
 
     <ListView
         android:id="@+id/purchaseList"

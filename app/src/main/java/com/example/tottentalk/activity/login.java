@@ -1,4 +1,4 @@
-package com.example.tottentalk;
+package com.example.tottentalk.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.tottentalk.R;
 
 public class login extends AppCompatActivity {
 
@@ -34,15 +36,16 @@ public class login extends AppCompatActivity {
             String username = usernameField.getText().toString();
             String password = passwordField.getText().toString();
 
+            // biar gampang debug langsung aja ke homepage
             goToHomepage();
-//            if(username.isEmpty() || password.isEmpty()){
-//                Toast.makeText(this, "All fields must be filled!", Toast.LENGTH_SHORT).show();
-//            }else if(username.equals("dummy") && password.equals("dummy123")){
-//                Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show();
-//                goToHomepage();
-//            }else{
-//                Toast.makeText(this, "Invalid username or password!", Toast.LENGTH_SHORT).show();
-//            }
+            if(username.isEmpty() || password.isEmpty()){
+                Toast.makeText(this, "All fields must be filled!", Toast.LENGTH_SHORT).show();
+            }else if(username.equals("dummy") && password.equals("dummy123")){
+                Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show();
+                goToHomepage();
+            }else{
+                Toast.makeText(this, "Invalid username or password!", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 

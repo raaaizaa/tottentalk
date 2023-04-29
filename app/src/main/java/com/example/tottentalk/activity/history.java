@@ -1,27 +1,27 @@
-package com.example.tottentalk;
+package com.example.tottentalk.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-import java.util.ArrayList;
+import com.example.tottentalk.R;
+import com.example.tottentalk.javaclass.ticket;
+
 import java.util.List;
 
-public class cart extends AppCompatActivity {
+public class history extends AppCompatActivity {
 
-    private ImageButton backButton, cartButton;
+    private ImageButton backButton, historyButton;
     private ListView purchaseList;
-    private ticket ticket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
+        setContentView(R.layout.activity_history);
 
         initialize();
     }
@@ -30,32 +30,25 @@ public class cart extends AppCompatActivity {
         backButton = findViewById(R.id.backButton);
         setBackButton();
 
-        cartButton = findViewById(R.id.cartButton);
-        setCartButton();
+        historyButton = findViewById(R.id.historyButton);
+        setHistoryButton();
 
         purchaseList = findViewById(R.id.purchaseList);
         showPurchaseList();
     }
 
     public void setBackButton(){
-        backButton.setOnClickListener(e -> {
-            goToHomePage();
-        });
+        backButton.setOnClickListener(e -> goToHomePage());
     }
 
-    public void setCartButton(){
-        cartButton.setOnClickListener(e -> {
-            goToCartPage();
-        });
+    public void setHistoryButton(){
+        historyButton.setOnClickListener(e -> goToCartPage());
     }
 
     public void showPurchaseList(){
-
         List<ticket> ticketList = ticket.getTicketList();
-        Log.i("tes", ticketList.toString());
 
-        ArrayAdapter adapter = new ArrayAdapter<>(this, R.layout.purchase_listview, R.id.orderedList, ticketList);
-        Log.i("tes", "tes");
+        ArrayAdapter<ticket> adapter = new ArrayAdapter<>(this, R.layout.purchase_listview, R.id.orderedList, ticketList);
         purchaseList.setAdapter(adapter);
     }
 
@@ -65,7 +58,7 @@ public class cart extends AppCompatActivity {
     }
 
     public void goToCartPage(){
-        Intent intent = new Intent(this, cart.class);
+        Intent intent = new Intent(this, history.class);
         startActivity(intent);
     }
 }
