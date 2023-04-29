@@ -18,6 +18,9 @@
             android:name=".clickedNews"
             android:exported="false" />
         <activity
+            android:name=".clickedUpcoming"
+            android:exported="false" />
+        <activity
             android:name=".login"
             android:exported="true">
             <intent-filter>

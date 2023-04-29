@@ -34,14 +34,15 @@ public class login extends AppCompatActivity {
             String username = usernameField.getText().toString();
             String password = passwordField.getText().toString();
 
-            if(username.isEmpty() || password.isEmpty()){
-                Toast.makeText(this, "All fields must be filled!", Toast.LENGTH_SHORT).show();
-            }else if(username.equals("dummy") && password.equals("dummy123")){
-                Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show();
-                goToHomepage();
-            }else{
-                Toast.makeText(this, "Invalid username or password!", Toast.LENGTH_SHORT).show();
-            }
+            goToHomepage();
+//            if(username.isEmpty() || password.isEmpty()){
+//                Toast.makeText(this, "All fields must be filled!", Toast.LENGTH_SHORT).show();
+//            }else if(username.equals("dummy") && password.equals("dummy123")){
+//                Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show();
+//                goToHomepage();
+//            }else{
+//                Toast.makeText(this, "Invalid username or password!", Toast.LENGTH_SHORT).show();
+//            }
         });
     }
 

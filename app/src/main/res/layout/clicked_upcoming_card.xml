@@ -14,6 +14,7 @@
         android:padding="24dp">
 
         <ImageView
+            android:id="@+id/teamone"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
@@ -31,6 +32,7 @@
             android:text="VS" />
 
         <ImageView
+            android:id="@+id/teamtwo"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
@@ -51,6 +53,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/gamename"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
@@ -61,6 +64,7 @@
                 android:text="@string/dummy_title" />
 
             <TextView
+                android:id="@+id/gamedate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
@@ -69,6 +73,7 @@
                 android:text="DD-MM-YYYY" />
 
             <Button
+                android:id="@+id/buybutton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_styling"
